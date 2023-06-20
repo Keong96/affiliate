@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/Keong96/affiliate-api#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {},
   "description": ""
