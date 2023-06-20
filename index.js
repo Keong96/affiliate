@@ -9,7 +9,7 @@ require('dotenv').config();
 
 const config = {
   connectionString:
-    "postgres://weddingappdb_user:EZNc8dlGCJ8ACJIkc7KlQfnwW4YR7rf9@dpg-cg3jcmd269v3bpaqiphg-a.singapore-postgres.render.com/weddingappdb?ssl=true",
+    "postgres://affiliatedb_mw06_user:qD1jGsmK0vInKh6CBvQNMxB6xYXTriHw@dpg-ci8vjgd9aq0dcs9ifq60-a.singapore-postgres.render.com/affiliatedb_mw06?ssl=true",
 };
 
 const { Client } = require('pg');
@@ -24,3 +24,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: false, parameterLimit:5
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });
+
+app.get('/', async (req, res) => {
+  res.status(200).send("OK");
+})
