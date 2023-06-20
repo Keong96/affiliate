@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const cors = require('cors')
 const app = express();
 const PORT = process.env.PORT || 8081;
-const qrcode = require('qrcode');
 require('dotenv').config();
 
 const config = {
