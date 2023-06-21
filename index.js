@@ -24,6 +24,15 @@ app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });
 
+function GenerateJWT(_userId, _email, _username)
+{
+  return jwt.sign(
+      { userId: _userId, email: _email, username: _username},
+      process.env.TOKEN_KEY,
+      { expiresIn: "24h" }
+    );
+}
+
 app.get('/', async (req, res) => {
   res.status(200).send("OK");
 })
