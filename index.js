@@ -118,3 +118,12 @@ app.get('/user/get/:id', async (req, res) => {
                 res.status(500).send(e.stack);
             })
 })
+
+app.get('/user/referral/:id', async (req, res) => {
+      client.query("SELECT * FROM users WHERE id = "+req.params.id)
+            .then((result) => res.send(JSON.stringify(result.rows)))
+            .catch((e) => {
+                console.error(e.stack);
+                res.status(500).send(e.stack);
+            })
+})
