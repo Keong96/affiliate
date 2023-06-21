@@ -81,9 +81,8 @@ app.post('/user/create/:referral?', async (req, res) => {
             {
               client.query("INSERT INTO users (username, email, password) VALUES ('"+req.body.username+"', '"+req.body.email+"', crypt('"+req.body.password+"', gen_salt('bf')))")
                     .then((result) => {
-                      if (req.params.referral)
+                      if (req.body.referral)
                       {
-                        console.log(req.params.referral);
                         if(typeof(req.body.referral) != 'undefined')
                             client.query("INSERT INTO referral (user_id, username, referral) VALUES ('"+result.insertId+"', '"+req.body.username+"', '"+req.params.referral+"')");
                       }
