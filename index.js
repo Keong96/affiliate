@@ -93,7 +93,7 @@ app.post('/user/create/:referral?', async (req, res) => {
                       if (req.body.referral)
                       {
                         if(typeof(req.body.referral) != 'undefined')
-                            client.query("INSERT INTO referral (user_id, username, referral) VALUES ('"+result.insertId+"', '"+req.body.username+"', '"+req.params.referral+"')");
+                            client.query("INSERT INTO referral (user_id, username, referral_id) VALUES ('"+result.insertId+"', '"+req.body.username+"', '"+req.params.referral+"')");
                       }
 
                       res.status(201).send("Register Success");
